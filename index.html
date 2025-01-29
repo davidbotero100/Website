@@ -1,28 +1,43 @@
-
-<!--<h1>Hello</h1>-->
 <!DOCTYPE html>
-<html>
-<head>
-	<title>OneRaw Website</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<style>
-		body {
-			background-color: rgb(98, 48, 48);
-		}
-	</style>
-</head>
-<body>
-	<h1>Change Background Color</h1>
-	<p>Click on the button to change the background color of this page:</p>
-	<button onclick="changeColor()">Change color &#10644 </button>
-	
-	<script>
-		function changeColor() {
-			document.body.style.backgroundColor = "grey";
-		}
-	</script>
-	<img src="./images/riding bikes.png" alt="My image">
-	<p>Hi, I like what computers can do.</p>
+<html lang="en">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Wedding Invitation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<h1>JOIN US BENEATH THE TREES</h1>
+		</header>
+
+		<section class="invitation">
+			<p>We would love for you to celebrate our special day with us!</p>
+			<p>Please respond to our invitation below.</p>
+		</section>
+
+		<section class="rsvp-form">
+			<form id="rsvp-form" action="submit_rsvp.php" method="POST">
+				<label for="name">Your Name and Lastname:</label>
+				<input type="text" id="full_name" name="full_name" required>
+
+				<label for="attendance">Will you be attending? </label>
+				<select id="attendance" name="attendance" required>
+					<option value="yes">Yes, we'll see you there!</option>
+					<option value="no">Sorry, I can't make it. Gotta feed the birds that day.</option>
+				</select>
+
+				<label for="accompanying">Who will accompany you?</label>
+				<input type="text" id="accompanying" name="accompanying">
+
+				<button type="submit">RSVP</button>
+			</form>
+		</section>
+	</div>
 </body>
+
 </html>
