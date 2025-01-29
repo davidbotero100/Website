@@ -11,8 +11,13 @@ $guest_list = [
 // Retrieve the submitted name from the POST request
 $full_name = $_POST['full_name'] ?? '';
 
+echo "Submitted Name: " . htmlspecialchars($full_name) . "<br>";
+
 // Check if the submitted name is in the guest list
 if (in_array($full_name, $guest_list)) {
+
+    // Debugging: Output a message before redirecting
+    echo "Name found in guest list. Redirecting...<br>";
 
     // If there is a match, redirect to the details page withing the same folder
     header("Location: details.html");
