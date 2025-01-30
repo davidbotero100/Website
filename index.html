@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Wedding Invitation</title>
-	<link rel="stylesheet" href="Website_Styles.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -21,21 +21,9 @@
 		</section>
 
 		<section class="rsvp-form">
-			<form id="rsvp-form" action="submit_rsvp.php" method="POST">
-				<label for="name">Your Name and Last Name:</label>
-				<input type="text" id="full_name" name="full_name" required>
-
-				<label for="attendance">Will you be attending? </label>
-				<select id="attendance" name="attendance" required>
-					<option value="yes">Yes, we'll see you there!</option>
-					<option value="no">Sorry, I can't make it. Gotta feed the birds that day.</option>
-				</select>
-
-				<label for="accompanying">Who will accompany you?</label>
-				<input type="text" id="accompanying" name="accompanying">
-
-				<button type="submit">RSVP</button>
-			</form>
+			<iframe
+				src="https://docs.google.com/forms/d/e/1FAIpQLSdFV5HeYAMLUve7JD21PT-lxoX-sbRmPHywYif-iNb_ghT_aQ/viewform?embedded=true"
+				width="640" height="415" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 		</section>
 	</div>
 </body>
