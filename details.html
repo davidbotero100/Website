@@ -12,14 +12,50 @@
 <body>
     <div class="container">
         <header>
+            <h1>JOIN US BENEATH THE TREES</h1>
+        </header>
+
+        <section class="invitation">
+            <p>We would love for you to celebrate our special day with us!</p>
+            <p>Please respond to our invitation below.</p>
+        </section>
+
+        <section class="rsvp-form">
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdp91Aedgg2ksDgQrunttB_OSF7HwRGV_nDOuy34PpQQUy3cw/viewform?embedded=true"
+                width="640" height="755" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+    </div>
+
+    <div class="container">
+        <header>
             <h1>Wedding Details</h1>
         </header>
         <section>
             <img src="images/1.jpg" alt="Wedding Celebration" style="max-width: 100%; height: auto;">
-            <img src="images/2.jpg" alt="Wedding Celebration" style="max-width: 100%; height: auto;">
+            <img src="images/2.png" alt="Wedding Celebration" style="max-width: 100%; height: auto;">
             <img src="images/3.jpg" alt="Wedding Celebration" style="max-width: 100%; height: auto;">
         </section>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function getQueryParam(param) {
+                let urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            let fullName = getQueryParam("name");
+            if (fullName) {
+                let iframe = document.querySelector("iframe");
+                if (iframe) {
+                    let formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdp91Aedgg2ksDgQrunttB_OSF7HwRGV_nDOuy34PpQQUy3cw/viewform?embedded=true";
+                    iframe.src = formURL + `&entry.123456789=${encodeURIComponent(fullName)}`; // Replace 123456789 with actual field entry ID
+                }
+            }
+        });
+    </script>
+
 </body>
 
 </html>
