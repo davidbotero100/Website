@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Wedding Invitation</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="Website_Styles.css">
 </head>
 
 <body>
@@ -21,9 +21,55 @@
 		</section>
 
 		<section class="rsvp-form">
-			<p> Place holder </p>
+			<form id="rsvp-form" action="submit_rsvp.php" method="POST">
+				<label for="name">Your Name and Lastname:</label>
+				<input type="text" id="full_name" name="full_name" required>
+
+				<label for="attendance">Will you be attending? </label>
+				<select id="attendance" name="attendance" required>
+					<option value="yes">Yes, we'll see you there!</option>
+					<option value="no">Sorry, I can't make it. Gotta feed the birds that day.</option>
+				</select>
+
+				<label for="accompanying">Who will accompany you?</label>
+				<input type="text" id="accompanying" name="accompanying">
+
+				<button type="submit">RSVP</button>
+			</form>
 		</section>
 	</div>
+
+	<script>
+		// Event listener to the RSVP form submission
+		document.getElementById("rsvp-form").addEventListener("submit", function (event) {
+			event.preventDefault();
+
+			var fullName = document.getElementById("full_name").value;
+
+			var url = "https://script.google.com/macros/s/AKfycbzCsT99bz7RvJwT8-nptdZEx3A8M6tlAVNlAcZ-juCkXgj_PVfBBW3ua4-iFXg5JoOZ/exec";
+			var params = {
+				"method": "get",
+				"contentType": "application/json",
+				"payload": { "name": fullName }
+			};
+
+			fetch(url + "?name=" + encodeURIComponent(fullName))
+				.then(response => response.json())
+				.then(data => {
+
+					if (data.isGuest) {
+						window.location.href = "details.html?name=" + encodeURIComponent(fullName);
+					} else {
+						alert("❌ Sorry, your name is not on the guest list. Please contact the bride or groom if there's an issue.");
+					}
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert("An error occurred. Please try again later.");
+				});
+		});
+	</script>
+
 </body>
 
 </html>
