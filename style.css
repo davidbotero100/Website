@@ -100,3 +100,34 @@ header h2 {
 .rsvp-form button:hover {
   background-color: #067d38;
 }
+
+.rsvp-form {
+  padding: 10px;
+  /* Adds space around the form */
+  text-align: center;
+}
+
+.rsvp-form iframe {
+  width: 95%;
+  /* Slightly within the container */
+  max-width: 600px;
+  /* Ensures it doesn’t stretch too much */
+  height: 800px;
+  border-radius: 8px;
+  /* Optional: Adds rounded corners */
+  border: 1px solid #ccc;
+  /* Optional: Adds a subtle border */
+}
+
+@media (max-width: 600px) {
+  .rsvp-form iframe {
+    width: 90%;
+    /* Adjust width for smaller screens */
+  }
+
+  .container {
+    margin: 20px;
+    /* Ensures the container has some spacing on small screens */
+    padding: 15px;
+  }
+}
