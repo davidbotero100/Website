@@ -17,7 +17,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f1f1ef;
   color: #333;
   background-image: url('images/forest.jpeg');
   background-size: cover;
@@ -36,7 +36,7 @@ body {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f1f1ef;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -88,7 +88,7 @@ header h2 {
 .rsvp-form button {
   padding: 12px;
   background-color: #063118;
-  color: white;
+  color: #f1f1ef;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -115,7 +115,7 @@ header h2 {
   height: 800px;
   border-radius: 8px;
   /* Optional: Adds rounded corners */
-  border: 1px solid #ccc;
+  border: 1px solid #f1f1ef;
   /* Optional: Adds a subtle border */
 }
 
