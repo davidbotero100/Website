@@ -44,12 +44,13 @@
 
 			event.preventDefault();
 
-			var fullName = document.getElementById("full_name").value.trim();
-
-			if (!fullName || !/^[a-zA-Z\s]+$/.test(fullName)) {
-				alert("❌ Please enter a valid name.");
-				return;
-			}
+			var fullName = document.getElementById("full_name").value;
+			/*
+						if (!fullName || !/^[a-zA-Z\s]+$/.test(fullName)) {
+							alert("❌ Please enter a valid name.");
+							return;
+						}
+			*/
 
 			//fullName = fullName.toLowerCase();
 
