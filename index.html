@@ -45,6 +45,13 @@
 
 			var fullName = document.getElementById("full_name").value;
 
+			if (!fullName || !isNan(fullName) || !/^[a-zA-Z\s]*$/.test(fullName)) {
+				alert("❌ Please enter a valid name.");
+				return;
+			}
+
+			fullName = fullName.toUpperCase();
+
 			var url = "https://script.google.com/macros/s/AKfycbzCsT99bz7RvJwT8-nptdZEx3A8M6tlAVNlAcZ-juCkXgj_PVfBBW3ua4-iFXg5JoOZ/exec";
 			var params = {
 				"method": "get",
