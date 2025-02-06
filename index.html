@@ -45,7 +45,7 @@
 
 			var fullName = document.getElementById("full_name").value.trim();
 
-			if (!fullName || !/^[a-zA-Z\s]+$/.test(fullName)) {
+			if (!fullName || !/^[a-zA-ZñÑ\s]+$/.test(fullName)) {
 				alert("❌ Please enter a valid name.");
 				return;
 			}
